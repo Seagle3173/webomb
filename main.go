@@ -110,13 +110,9 @@ func main() {
 	//建立客户端请求header
 	transport := http.Transport{
 		DisableKeepAlives: true,
-		Dial: (&net.Dialer{
-			Timeout: 5 * time.Second,
-		}).Dial,
 	}
 	client := &http.Client{
 		Transport: &transport,
-		Timeout:   5 * time.Second,
 	}
 
 	//agent参数的优先级高于
